@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Heirloom App",
+    "badge": "AI-Powered",
+    "badgeColor": "bg-green-500",
+    "desc": "AI-powered family heritage application with advanced backend architecture and intelligent data processing capabilities.",
+    "tags": ["Node.js", "AI/ML", "MongoDB", "Express"],
+    "links": [
+      {
+        "type": "code",
+        "label": "Code",
+        "url": "https://github.com/milonmia/heirloom-app"
+      },
+      { "type": "demo", "label": "Demo", "url": "https://heirloom-demo.com" },
+      {
+        "type": "docs",
+        "label": "Docs",
+        "url": "https://notion.so/heirloom-docs"
+      }
+    ]
+  },
+  {
+    "title": "E-Commerce API",
+    "badge": "RESTful",
+    "badgeColor": "bg-blue-500",
+    "desc": "Robust RESTful API for e-commerce platform with authentication, payment integration, and inventory management.",
+    "tags": ["Node.js", "Express", "MongoDB", "JWT"],
+    "links": [
+      {
+        "type": "code",
+        "label": "Code",
+        "url": "https://github.com/milonmia/ecommerce-api"
+      },
+      {
+        "type": "demo",
+        "label": "Demo",
+        "url": "https://ecommerce-api-demo.com"
+      },
+      {
+        "type": "docs",
+        "label": "Docs",
+        "url": "https://docs.google.com/ecommerce-api"
+      }
+    ]
+  },
+  {
+    "title": "Task Management System",
+    "badge": "Real-time",
+    "badgeColor": "bg-purple-500",
+    "desc": "Full-stack task management with real-time updates, user authentication, and project collaboration features.",
+    "tags": ["React", "Node.js", "Socket.io", "MongoDB"],
+    "links": [
+      {
+        "type": "code",
+        "label": "Code",
+        "url": "https://github.com/milonmia/task-manager"
+      },
+      {
+        "type": "demo",
+        "label": "Demo",
+        "url": "https://task-manager-demo.com"
+      },
+      {
+        "type": "docs",
+        "label": "Docs",
+        "url": "https://notion.so/task-manager-docs"
+      }
+    ]
+  },
+  {
+    "title": "Weather API Service",
+    "badge": "Microservice",
+    "badgeColor": "bg-orange-500",
+    "desc": "Microservice architecture for weather data aggregation with caching, rate limiting, and multi-source integration.",
+    "tags": ["Node.js", "Redis", "Express", "APIs"],
+    "links": [
+      {
+        "type": "code",
+        "label": "Code",
+        "url": "https://github.com/milonmia/weather-api"
+      },
+      {
+        "type": "demo",
+        "label": "Demo",
+        "url": "https://weather-api-demo.com"
+      },
+      {
+        "type": "docs",
+        "label": "Docs",
+        "url": "https://docs.google.com/weather-api"
+      }
+    ]
+  }
+]

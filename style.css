@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  /* color tokens (kept in sync with Tailwind config colors) */
+  --color-primary-50: #f0f9ff;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-900: #0c4a6e;
+
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+
+  --bg-glass-light: rgba(255, 255, 255, 0.08);
+  --border-glass-light: rgba(255, 255, 255, 0.12);
+  --bg-glass-dark: rgba(0, 0, 0, 0.2);
+  --border-glass-dark: rgba(255, 255, 255, 0.06);
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-full: 9999px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Consistent glass surface used throughout the site */
+.glass {
+  backdrop-filter: blur(12px);
+  background: var(--bg-glass-light);
+  border: 1px solid var(--border-glass-light);
+  border-radius: var(--radius-md);
+}
+
+.dark .glass {
+  background: var(--bg-glass-dark);
+  border: 1px solid var(--border-glass-dark);
+}
+
+/* Utility: a consistent rounded pill used for nav and buttons */
+.rounded-pill {
+  border-radius: var(--radius-full) !important;
+}
+
+/* Headings spacing consistency */
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: calc(var(--space-4));
+}
+
+h1 {
+  line-height: 1.05;
+}
+h2 {
+  line-height: 1.1;
+}
+
+/* Reduce visual clutter on small text blocks */
+p,
+li,
+span {
+  line-height: 1.6;
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease, box-shadow 0.25s ease;
+  border-radius: var(--radius-md);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.18);
+}
+
+.skill-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+/* Matrix and code backgrounds: tone down for consistency */
+.matrix-bg {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(16, 185, 129, 0.06) 30%,
+    rgba(16, 185, 129, 0.06) 70%,
+    transparent 70%
+  );
+  background-size: 20px 20px;
+}
+
+.code-bg {
+  background-image: linear-gradient(
+      90deg,
+      rgba(16, 185, 129, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(16, 185, 129, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Terminal cursor */
+.terminal-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Buttons - safe, consistent styles to complement Tailwind classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: calc(var(--space-3)) calc(var(--space-5));
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.12s ease;
+}
+
+.btn-pill {
+  border-radius: var(--radius-full);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(100, 100, 100, 0.06);
+}
+
+/* Small consistent utilities */
+.muted {
+  color: rgba(100, 100, 100, 0.8);
+}
+.accent {
+  color: var(--color-accent-500);
+}
+
+/* Social link and nav minor tweaks for spacing consistency */
+.social-link {
+  padding: calc(var(--space-3));
+  border-radius: var(--radius-md);
+}
+.nav-link {
+  padding: calc(var(--space-2)) calc(var(--space-4));
+  border-radius: var(--radius-md);
+}
+
+/* Small form spacing consistency */
+form input,
+form textarea,
+form select {
+  padding: calc(var(--space-3));
+  border-radius: var(--radius-sm);
+}
+
+/* Keep small decorative dots consistent */
+.w-3.h-3 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Navbar contrast when placed over dark hero/background */
+#navbar {
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  will-change: transform, background-color;
+}
+
+/* Applied when navbar is visually on top of the dark hero area */
+/* .navbar--over-hero {
+  color: #fff;
+} */
+
+.navbar--over-hero .glass {
+  /* make the glass darker so text/icons are readable */
+  background: rgba(0, 0, 0, 0.42) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.navbar--over-hero .nav-link {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar--over-hero .font-mono {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar--over-hero button,
+.navbar--over-hero svg {
+  color: inherit !important;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* Slight drop shadow to lift navbar off the hero for better contrast */
+/* .navbar--over-hero {
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.25);
+} */
+
+/* Previously used to scale navbar on scroll; now disabled to keep navbar stable */
+#navbar.scale-95 {
+  transform: none;
+}
+
+/* CTA button responsive adjustments */
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-width: 220px; /* comfortable default on desktop */
+}
+
+/* Make CTAs equal width on small screens and slightly smaller */
+@media (max-width: 640px) {
+  #cta-buttons {
+    width: 100%;
+    padding: 0 var(--space-4);
+  }
+  .cta-primary,
+  .cta-secondary {
+    min-width: 0;
+    width: 100%;
+    padding: calc(var(--space-2)) calc(var(--space-4));
+    font-size: 0.95rem;
+    border-radius: 12px;
+  }
+
+  /* Touch devices: remove heavy hover transforms to avoid layout shifts */
+  .cta-primary:hover,
+  .cta-secondary:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Slightly tighten spacing on medium screens */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cta-primary,
+  .cta-secondary {
+    min-width: 190px;
+    padding: calc(var(--space-2)) calc(var(--space-5));
+  }
+}
