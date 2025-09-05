@@ -3,91 +3,83 @@
     "title": "Heirloom App",
     "badge": "AI-Powered",
     "badgeColor": "bg-green-500",
-    "desc": "AI-powered family heritage application with advanced backend architecture and intelligent data processing capabilities.",
-    "tags": ["Node.js", "AI/ML", "MongoDB", "Express"],
+    "desc": "Heirloom is a unique mobile app that uses AI to create a personalized “digital legacy.” It connects users with their loved ones by continuing conversations even after they’re gone, based on data from their interactions.",
+    "tags": ["Express", "AI/OpenAI", "MongoDB", "VectorDB", "Redis"],
     "links": [
       {
         "type": "code",
         "label": "Code",
-        "url": "https://github.com/milonmia/heirloom-app"
+        "url": "https://github.com/devmilon923/Heirloom-App-Backend"
       },
-      { "type": "demo", "label": "Demo", "url": "https://heirloom-demo.com" },
+
       {
         "type": "docs",
         "label": "Docs",
-        "url": "https://notion.so/heirloom-docs"
+        "url": "https://docs.google.com/document/d/1yBOvfoGFhI0K0byIBn4FOLgDtfhz0f1z8s1K7cEz-0U/edit?tab=t.0#heading=h.yycmiykqlitc"
       }
     ]
   },
   {
-    "title": "E-Commerce API",
-    "badge": "RESTful",
+    "title": "Chatcrypt Web Application",
+    "badge": "Web App",
     "badgeColor": "bg-blue-500",
-    "desc": "Robust RESTful API for e-commerce platform with authentication, payment integration, and inventory management.",
-    "tags": ["Node.js", "Express", "MongoDB", "JWT"],
+    "desc": "Chatcrypt is a secure, anonymous chat app that stores messages temporarily and deletes them daily for privacy. It supports real-time chats, media sharing, and server status monitoring. Built with Node.js, React, and hosted on Render.",
+    "tags": ["Node.js", "MongoDB", "JWT", "Socket.io"],
     "links": [
       {
         "type": "code",
         "label": "Code",
-        "url": "https://github.com/milonmia/ecommerce-api"
+        "url": "https://github.com/devmilon923/Chatcrypt"
       },
       {
         "type": "demo",
         "label": "Demo",
-        "url": "https://ecommerce-api-demo.com"
+        "url": "https://chatcrypt.netlify.app/"
       },
       {
         "type": "docs",
         "label": "Docs",
-        "url": "https://docs.google.com/ecommerce-api"
+        "url": "https://docs.google.com/document/d/1ImB06b5mY1RBUk7Qsxhy01xbEvwrjATW0IzQeUEfplg/edit?usp=sharing"
       }
     ]
   },
   {
-    "title": "Task Management System",
-    "badge": "Real-time",
+    "title": "Gym Management",
+    "badge": "RESTful",
     "badgeColor": "bg-purple-500",
-    "desc": "Full-stack task management with real-time updates, user authentication, and project collaboration features.",
-    "tags": ["React", "Node.js", "Socket.io", "MongoDB"],
+    "desc": "This system streamlines gym operations with role-based access for Admins, Trainers, and Trainees. It manages class schedules (max 5 per day, 2 hours each) and limits trainees to 10 per class. Features include JWT authentication, booking management, and robust error handling. Built with JavaScript, Express.js, MongoDB, and Mongoose.",
+    "tags": ["Express", "JWT", "MongoDB", "Mongoose"],
     "links": [
       {
         "type": "code",
         "label": "Code",
-        "url": "https://github.com/milonmia/task-manager"
+        "url": "https://github.com/devmilon923/Gym-Management-System"
       },
-      {
-        "type": "demo",
-        "label": "Demo",
-        "url": "https://task-manager-demo.com"
-      },
+
       {
         "type": "docs",
         "label": "Docs",
-        "url": "https://notion.so/task-manager-docs"
+        "url": "https://docs.google.com/document/d/1OB-Fyt16fw3FRm49efNoiiFr8IQghaZL9DRfLP4ld_U/edit?usp=sharing"
       }
     ]
   },
   {
-    "title": "Weather API Service",
-    "badge": "Microservice",
+    "title": "SecureFile Manager",
+    "badge": "RESTful",
     "badgeColor": "bg-orange-500",
-    "desc": "Microservice architecture for weather data aggregation with caching, rate limiting, and multi-source integration.",
-    "tags": ["Node.js", "Redis", "Express", "APIs"],
+    "desc": "This is a secure file and user management system with JWT-based authentication. Users can manage accounts, upload and share files, create and organize folders, and access private spaces protected by PINs. The system ensures privacy and control over file operations like renaming, duplicating, and deleting, all through secure API endpoints.",
+    "tags": ["Express", "JWT", "MongoDB", "Mongoose"],
     "links": [
       {
         "type": "code",
         "label": "Code",
-        "url": "https://github.com/milonmia/weather-api"
+        "url": "https://github.com/devmilon923/Storage-management-backend"
       },
-      {
-        "type": "demo",
-        "label": "Demo",
-        "url": "https://weather-api-demo.com"
-      },
+
       {
         "type": "docs",
         "label": "Docs",
-        "url": "https://docs.google.com/weather-api"
+        "url": "https://docs.google.com/document/d/1twiChPyfA7b3rawCgL-9zDP9yPGkH_CsAPPl9y-R9yc/edit?usp=sharing"
       }
     ]
   }
