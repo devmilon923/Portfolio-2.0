@@ -289,7 +289,6 @@ class ProjectRenderer {
     projects.forEach((p) => {
       const node = this.template.content.cloneNode(true);
 
-      const card = node.querySelector(".project-card");
       const title = node.querySelector(".project-title");
       const badge = node.querySelector(".project-badge");
       const badgeDot = node.querySelector(".project-badge-dot");
@@ -322,7 +321,7 @@ class ProjectRenderer {
         a.target = "_blank";
         a.rel = "noopener noreferrer";
         a.className =
-          "flex items-center px-4 py-2 bg-slate-800 dark:bg-slate-700 text-white rounded-lg hover:bg-slate-900 dark:hover:bg-slate-600 transition-all duration-300 hover:scale-105";
+          "flex items-center px-4 py-2 bg-slate-800 dark:bg-slate-700 text-white rounded-lg hover:bg-slate-900 dark:hover:bg-slate-600  transition-all duration-300 hover:scale-100";
 
         // small icon depending on type
         const svg = document.createElementNS(
