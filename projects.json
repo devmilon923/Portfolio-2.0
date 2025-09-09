@@ -44,22 +44,26 @@
     ]
   },
   {
-    "title": "Gym Management",
-    "badge": "RESTful",
+    "title": "Word Bound – Multiplayer Word Game",
+    "badge": "Game",
     "badgeColor": "bg-purple-500",
-    "desc": "This system streamlines gym operations with role-based access for Admins, Trainers, and Trainees. It manages class schedules (max 5 per day, 2 hours each) and limits trainees to 10 per class. Features include JWT authentication, booking management, and robust error handling. Built with JavaScript, Express.js, MongoDB, and Mongoose.",
-    "tags": ["Express", "JWT", "MongoDB", "Mongoose"],
+    "desc": "Developed a multiplayer word game where players take turns forming words that start with the last letter of the previous word. Includes a real-time typing preview system, allowing players to see the other player’s typing as they type, enhancing the interaction and experience.",
+    "tags": ["Express", "Vanilla Frontend", "Socket.io"],
     "links": [
       {
         "type": "code",
         "label": "Code",
-        "url": "https://github.com/devmilon923/Gym-Management-System"
+        "url": "https://github.com/devmilon923/Word-Game"
       },
-
+      {
+        "type": "demo",
+        "label": "Demo",
+        "url": "https://word-bound.netlify.app/"
+      },
       {
         "type": "docs",
         "label": "Docs",
-        "url": "https://docs.google.com/document/d/1OB-Fyt16fw3FRm49efNoiiFr8IQghaZL9DRfLP4ld_U/edit?usp=sharing"
+        "url": "https://docs.google.com/document/d/1DW3V87WoU2yU7Vgr4cfZSmNHOzN0K3J7Jq2z7q9gvXc/edit?tab=t.0"
       }
     ]
   },
