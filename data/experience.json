@@ -1,0 +1,22 @@
+{
+  "experiences": [
+    {
+      "period": "2025 - Present",
+      "role": "Full-Stack Developer",
+      "company": "at Spark Tech Agency",
+      "description": "I joined Betopia Limited in February 2025, and this is my first job. I'm grateful for the opportunity. The company is a software agency working mainly with European clients, which has allowed me to work on diverse projects. In a short time, I've gained valuable experience in project planning, execution, and critical thinking."
+    },
+    {
+      "period": "2024 - 2025",
+      "role": "Completed Web Development",
+      "company": "by Progamming Hero",
+      "description": "After jumping into JavaScript, I completed the basic MERN roadmap with Sumit Sir and online resources. Realizing that self-learning alone isn't enough, I joined Programming Hero to further polish my skills. I wanted to test myself, compare with others, and dedicate 6 months to achieving something great."
+    },
+    {
+      "period": "2020 - 2024",
+      "role": "Self Study",
+      "company": "from Home",
+      "description": "In 2020, during the coronavirus pandemic, I had a self-realization about my future and decided to explore programming, focusing on web development. I started with HTML, CSS, and PHP, working on projects with Laravel 10 and MySQL. Later, I expanded my knowledge by learning JavaScript with Sumit Sir."
+    }
+  ]
+}

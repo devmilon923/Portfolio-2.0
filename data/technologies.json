@@ -1,0 +1,33 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Redux"]
+    },
+    {
+      "name": "Backend",
+      "technologies": [
+        "Node.js",
+        "Express",
+        "Aggregation",
+        "REST APIs",
+        "SocketIO"
+      ]
+    },
+    {
+      "name": "Database & Services",
+      "technologies": ["MongoDB", "Redis", "Firebase"]
+    },
+    {
+      "name": "Deployment & DevOps",
+      "technologies": [
+        "AWS",
+        "Docker",
+        "Ngnix",
+        "CI/CD",
+        "Github Action",
+        "Git"
+      ]
+    }
+  ]
+}
