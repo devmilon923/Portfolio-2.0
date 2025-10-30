@@ -54,12 +54,12 @@ async function loadProjects() {
                 </div>
                 <p class="project-description">${project.description}</p>
                 <div class="project-links">
-                    <a href="${
+                    <a target="_blank" href="${
                       project.liveLink
                     }" class="project-link">View More →</a>
                     <a href="${
                       project.githubLink
-                    }" class="project-link">GitHub →</a>
+                    }" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
         `

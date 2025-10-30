@@ -1578,13 +1578,19 @@ footer {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
+    margin: 0.5rem 0rem;
   }
 
   .floating-shape {
     display: none;
   }
-
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+  .hero-name {
+    font-size: 1.9rem;
+  }
   .hero-stats {
     gap: 2rem;
   }
@@ -1689,6 +1695,16 @@ footer {
 @media (max-width: 420px) {
   .section {
     padding: clamp(1.5rem, 4vh, 2rem) 1.5rem;
+  }
+  .availability-badge span {
+    font-size: 0.7rem;
+  }
+  .hero-name {
+    font-size: 1.9rem;
+  }
+  .hero h1 {
+    font-size: 1.9rem;
+    margin: 0.5rem 0rem;
   }
   .hero-cta {
     gap: 0.1rem;

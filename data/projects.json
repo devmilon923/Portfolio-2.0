@@ -28,7 +28,7 @@
       ],
       "description": "Developed a multiplayer word game where players take turns forming words that start with the last letter of the previous word. Includes a real-time typing preview system, allowing players to see the other player’s typing as they type, enhancing the interaction and experience.",
       "liveLink": "https://word-bound.netlify.app/",
-      "githubLink": "https://word-bound.netlify.app/"
+      "githubLink": "https://github.com/devmilon923/Word-Game"
     },
     {
       "id": "04",
