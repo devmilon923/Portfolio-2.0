@@ -393,6 +393,7 @@ a {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+
   margin-bottom: 4rem;
   animation: fadeInUp 1s ease-out 0.8s both;
 }
@@ -1689,7 +1690,10 @@ footer {
   .section {
     padding: clamp(1.5rem, 4vh, 2rem) 1.5rem;
   }
-
+  .hero-cta {
+    gap: 0.1rem;
+    justify-content: center;
+  }
   .hero-skills {
     grid-template-columns: 1fr;
     gap: 0.6rem;
