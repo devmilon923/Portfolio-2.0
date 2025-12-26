@@ -95,19 +95,112 @@ async function loadExperience() {
   }
 }
 
+// Calculate months between two dates
+function calculateMonths(startDate, endDate = null) {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+
+  let months = (end.getFullYear() - start.getFullYear()) * 12;
+  months += end.getMonth() - start.getMonth();
+
+  return Math.max(0, months);
+}
+
+// Calculate smart years (show months if < 12, years if >= 12)
+function calculateSmartYears(startDate, endDate = null) {
+  const months = calculateMonths(startDate, endDate);
+
+  // If less than 12 months, return as is for month display
+  if (months < 12) {
+    return months;
+  }
+
+  // Otherwise convert to whole years
+  return Math.floor(months / 12);
+}
+
+// Calculate years between two dates (in decimal format where 1 month = 0.01)
+function calculateYears(startDate, endDate = null) {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+
+  let months = (end.getFullYear() - start.getFullYear()) * 12;
+  months += end.getMonth() - start.getMonth();
+
+  // Convert months to decimal years (1 month = 0.01 years)
+  return Math.max(0, months / 100);
+}
+
 function animateCounter(element) {
-  const target = parseInt(element.getAttribute("data-target"));
+  let target = parseInt(element.getAttribute("data-target"));
+  let unit = ""; // For smart display
+  let labelSuffix = ""; // For dynamic label
+
+  // Check if this is a calculated value
+  const calcType = element.getAttribute("data-calc");
+  if (calcType) {
+    const startDate = element.getAttribute("data-start");
+    const endDate = element.getAttribute("data-end");
+
+    if (calcType === "months") {
+      target = calculateMonths(startDate, endDate);
+    } else if (calcType === "years") {
+      target = calculateYears(startDate, endDate);
+    } else if (calcType === "smart-years") {
+      const months = calculateMonths(startDate, endDate);
+      if (months < 12) {
+        target = months;
+        unit = "M"; // Month
+      } else {
+        target = Math.floor(months / 12);
+        unit = "Y"; // Year
+        const years = Math.floor(months / 12);
+      }
+
+      // Update the label in the next sibling element
+      const labelElement = element.nextElementSibling;
+      if (labelElement && labelElement.classList.contains("stat-label")) {
+        const baseLabel =
+          labelElement.getAttribute("data-base-label") ||
+          labelElement.textContent.replace(/\s(Month|Year)s?$/i, "");
+        labelElement.setAttribute("data-base-label", baseLabel);
+        labelElement.textContent = baseLabel + labelSuffix;
+      }
+    }
+  }
+
   const duration = 2000;
   const increment = target / (duration / 16);
   let current = 0;
+  const isCalculated = element.getAttribute("data-calc");
 
   const updateCounter = () => {
     current += increment;
     if (current < target) {
-      element.textContent = Math.floor(current) + "+";
+      if (isCalculated === "smart-years") {
+        if (unit === "M") {
+          element.textContent = Math.floor(current) + " Months";
+        } else {
+          element.textContent = Math.floor(current) + " Years";
+        }
+      } else if (isCalculated) {
+        element.textContent = current.toFixed(2) + "+";
+      } else {
+        element.textContent = Math.floor(current) + "+";
+      }
       requestAnimationFrame(updateCounter);
     } else {
-      element.textContent = target + "+";
+      if (isCalculated === "smart-years") {
+        if (unit === "M") {
+          element.textContent = Math.floor(target) + " Month";
+        } else {
+          element.textContent = Math.floor(target) + " Year";
+        }
+      } else if (isCalculated) {
+        element.textContent = target.toFixed(2) + "+";
+      } else {
+        element.textContent = target + "+";
+      }
     }
   };
 

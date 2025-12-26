@@ -2,7 +2,7 @@
   "categories": [
     {
       "name": "Frontend",
-      "technologies": ["React", "TypeScript", "Tailwind CSS", "Redux"]
+      "technologies": ["NextJS", "React", "TypeScript", "Tailwind CSS", "Redux"]
     },
     {
       "name": "Backend",

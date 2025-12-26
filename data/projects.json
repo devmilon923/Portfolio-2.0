@@ -2,6 +2,14 @@
   "projects": [
     {
       "id": "01",
+      "title": "DE-Studio agency (Frontend)",
+      "tags": ["Nextjs", "TailwindCSS", "Framer Motion", "App Router"],
+      "description": "DE STUDIO is a modern, fully responsive agency website showcasing brand identity, web design, and development services. It's a frontend-only project with all dynamic content (projects, testimonials, team members, FAQs) managed through JSON data structures for easy maintenance.",
+      "liveLink": "https://de-studio.vercel.app",
+      "githubLink": "https://github.com/devmilon923/DE-Studio-agency"
+    },
+    {
+      "id": "02",
       "title": "Heirloom App (Backend)",
       "tags": ["MongoDB", "Node.js", "VectorDB", "OpenAI", "Redis"],
       "description": "Heirloom is a unique mobile app that uses AI to create a personalized “digital legacy.” It connects users with their loved ones by continuing conversations even after they’re gone, based on data from their interactions..",
@@ -9,7 +17,7 @@
       "githubLink": "https://github.com/devmilon923/Heirloom-App-Backend"
     },
     {
-      "id": "02",
+      "id": "03",
       "title": "Chatcrypt Web Application",
       "tags": ["Node.js", "MongoDB", "SocketIO", "JWT"],
       "description": "Chatcrypt is a secure, anonymous chat app that stores messages temporarily and deletes them daily for privacy. It supports real-time chats, media sharing, and server status monitoring. Built with Node.js, React, and hosted on Render.",
@@ -17,7 +25,7 @@
       "githubLink": "https://github.com/devmilon923/Chatcrypt"
     },
     {
-      "id": "03",
+      "id": "04",
       "title": "Word Bound – Multiplayer Word Game",
       "tags": [
         "Node.js",
@@ -29,14 +37,6 @@
       "description": "Developed a multiplayer word game where players take turns forming words that start with the last letter of the previous word. Includes a real-time typing preview system, allowing players to see the other player’s typing as they type, enhancing the interaction and experience.",
       "liveLink": "https://word-bound.netlify.app/",
       "githubLink": "https://github.com/devmilon923/Word-Game"
-    },
-    {
-      "id": "04",
-      "title": "SecureFile Manager (Backend)",
-      "tags": ["Node.js", "JWT", "MongoDB", "Mongoose"],
-      "description": "This is a secure file and user management system with JWT-based authentication. Users can manage accounts, upload and share files, create and organize folders, and access private spaces protected by PINs. The system ensures privacy and control over file operations like renaming, duplicating, and deleting, all through secure API endpoints.",
-      "liveLink": "https://docs.google.com/document/d/1twiChPyfA7b3rawCgL-9zDP9yPGkH_CsAPPl9y-R9yc/edit?tab=t.0",
-      "githubLink": "https://github.com/devmilon923/Storage-management-backend"
     }
   ]
 }
