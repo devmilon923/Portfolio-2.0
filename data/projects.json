@@ -2,6 +2,24 @@
   "projects": [
     {
       "id": "01",
+      "title": "Storiboard",
+      "type": "Full-Stack",
+      "tags": [
+        "Node.js",
+        "TypeScript",
+        "Postgres",
+        "BullMQ",
+        "Prisma",
+        "Next.js"
+      ],
+      "description": "Storiboard is a fully-featured, highly interactive social blogging platform designed for dreamers, writers, and creators. It offers a beautiful, glassmorphic UI, rich interactive components, and real-time style actions designed to help users share their stories, fiction, memoirs, and ideas without limits.",
+      "liveLink": "https://storiboard.netlify.app",
+      "githubLink": "https://github.com/devmilon923/Storiboard-UI",
+      "featured": true,
+      "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+    },
+    {
+      "id": "02",
       "title": "DE-Studio Agency",
       "type": "Frontend",
       "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "App Router"],
@@ -12,7 +30,7 @@
       "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
-      "id": "02",
+      "id": "03",
       "title": "Heirloom App",
       "type": "Backend",
       "tags": ["MongoDB", "Node.js", "VectorDB", "OpenAI", "Redis"],
@@ -23,7 +41,7 @@
       "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
-      "id": "03",
+      "id": "04",
       "title": "Chatcrypt",
       "type": "Full-Stack",
       "tags": ["Node.js", "MongoDB", "Socket.IO", "JWT"],
@@ -32,17 +50,6 @@
       "githubLink": "https://github.com/devmilon923/Chatcrypt",
       "featured": true,
       "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
-    },
-    {
-      "id": "04",
-      "title": "Word Bound",
-      "type": "Multiplayer Game",
-      "tags": ["Node.js", "TypeScript", "Socket.IO", "Dictionary API"],
-      "description": "A real-time multiplayer word game where players form words starting with the last letter of the previous word. Features live typing preview for enhanced interaction.",
-      "liveLink": "https://word-bound.netlify.app/",
-      "githubLink": "https://github.com/devmilon923/Word-Game",
-      "featured": true,
-      "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     }
   ]
 }
