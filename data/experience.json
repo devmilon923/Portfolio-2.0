@@ -1,10 +1,10 @@
 {
   "experiences": [
     {
-      "period": "2025 - Present",
+      "period": "Feb 2025 - Mar 2026",
       "role": "Full-Stack Developer",
-      "company": "at Spark Tech Agency",
-      "description": "I joined Betopia Limited in February 2025, and this is my first job. I'm grateful for the opportunity. The company is a software agency working mainly with European clients, which has allowed me to work on diverse projects. In a short time, I've gained valuable experience in project planning, execution, and critical thinking."
+      "company": "Spark Tech Agency",
+      "description": "Worked on full-stack web applications using React, TypeScript, Node.js, and MongoDB for European clients. Developed secure RESTful APIs, optimized application performance, and deployed production systems using Docker, AWS EC2, and GitHub Actions. Built several key projects including Heirloom (AI-powered system) and worked on diverse client projects."
     },
     {
       "period": "2024 - 2025",

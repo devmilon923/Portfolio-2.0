@@ -2,32 +2,19 @@
   "categories": [
     {
       "name": "Frontend",
-      "technologies": ["NextJS", "React", "TypeScript", "Tailwind CSS", "Redux"]
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     },
     {
       "name": "Backend",
-      "technologies": [
-        "Node.js",
-        "Express",
-        "Aggregation",
-        "REST APIs",
-        "SocketIO"
-      ]
+      "technologies": ["Node.js", "Express.js", "REST APIs"]
     },
     {
-      "name": "Database & Services",
-      "technologies": ["MongoDB", "Redis", "Firebase"]
+      "name": "Databases",
+      "technologies": ["MongoDB", "Postgres", "Prisma"]
     },
     {
-      "name": "Deployment & DevOps",
-      "technologies": [
-        "AWS",
-        "Docker",
-        "Ngnix",
-        "CI/CD",
-        "Github Action",
-        "Git"
-      ]
+      "name": "DevOps",
+      "technologies": ["Docker", "AWS", "Git"]
     }
   ]
 }

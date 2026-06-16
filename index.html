@@ -1,52 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Primary Meta Tags -->
-    <title>Milon Mia - Full Stack Developer Portfolio</title>
-    <meta name="title" content="Milon Mia - Full Stack Developer Portfolio" />
+    <title>Milon Mia — Full-Stack Developer</title>
+    <meta name="title" content="Milon Mia — Full-Stack Developer" />
     <meta
       name="description"
-      content="Full-stack developer specializing in React, Node.js, and cloud technologies. Experienced in building high-performance web applications with modern tech stack."
+      content="Full-stack developer building products with React, Node.js, and cloud technologies. Currently at Spark Tech Agency."
     />
     <meta
       name="keywords"
-      content="Full Stack Developer, React, Node.js, TypeScript, AWS, MongoDB, PostgreSQL, WebSocket, Docker, Frontend Developer, Backend Developer"
+      content="Milon Mia, Full Stack Developer, React, Node.js, TypeScript, AWS, MongoDB"
     />
     <meta name="author" content="Milon Mia" />
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devmilon923.github.io/" />
-    <meta
-      property="og:title"
-      content="Milon Mia - Full Stack Developer Portfolio"
-    />
+    <meta property="og:url" content="https://milon.bro.bd/" />
+    <meta property="og:title" content="Milon Mia — Full-Stack Developer" />
     <meta
       property="og:description"
-      content="Full-stack developer specializing in React, Node.js, and cloud technologies. Building clean, reliable, and high-performance web applications."
+      content="Full-stack developer building products with React, Node.js, and cloud technologies."
     />
     <meta property="og:image" content="./data/images/boy.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://devmilon923.github.io/" />
-    <meta
-      property="twitter:title"
-      content="Milon Mia - Full Stack Developer Portfolio"
-    />
+    <meta property="twitter:url" content="https://milon.bro.bd/" />
+    <meta property="twitter:title" content="Milon Mia — Full-Stack Developer" />
     <meta
       property="twitter:description"
-      content="Full-stack developer specializing in React, Node.js, and cloud technologies. Building clean, reliable, and high-performance web applications."
+      content="Full-stack developer building products with React, Node.js, and cloud technologies."
     />
     <meta property="twitter:image" content="./data/images/boy.png" />
 
-    <!-- Technical Meta Tags -->
+    <!-- Technical -->
     <meta name="robots" content="index, follow" />
-    <meta name="language" content="English" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#FAFAF8" />
 
     <link
       rel="shortcut icon"
@@ -57,359 +50,176 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="nav-content">
-        <div class="logo">Dev.Milon</div>
+        <a href="#" class="logo">Dev.Milon</a>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li>
-            <a href="#contact" id="white" style="color: black !important"
-              >Contact</a
-            >
-          </li>
+          <li><a href="#work" data-section="work">Work</a></li>
+          <li><a href="#about" data-section="about">About</a></li>
+          <li><a href="#journey" data-section="journey">Journey</a></li>
+          <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
         </ul>
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobileMenu">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <button
+          class="menu-btn"
+          id="menuBtn"
+          aria-label="Toggle navigation menu"
+        >
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
       </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a
+            href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
+            target="_blank"
+            rel="noopener"
+            >Resume ↗</a
+          >
+        </li>
+      </ul>
+    </div>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <!-- Floating Background Elements -->
-      <div class="hero-bg">
-        <div class="floating-shape"></div>
-        <!-- <div class="floating-shape"></div> -->
-        <div class="floating-shape"></div>
+      <p class="hero-eyebrow">
+        <span class="dot"></span>
+        Currently at Home
+      </p>
+
+      <h1>Milon Mia</h1>
+
+      <p class="hero-subtitle">
+        Full-stack developer building reliable products with React, Node.js, and
+        cloud infrastructure. I focus on clean code and products that work.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">
+          View My Work <span class="btn-arrow">↓</span>
+        </a>
+        <a
+          href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-secondary"
+        >
+          Resume <span class="btn-arrow">↗</span>
+        </a>
       </div>
+    </section>
 
-      <div class="hero-content">
-        <!-- Availability Badge -->
-        <div class="availability-badge">
-          <span class="status-dot"></span>
-          <span>Open In Work</span>
+    <!-- Selected Work -->
+    <section id="work" class="section reveal">
+      <div class="section-header">
+        <p class="section-label">Selected Work</p>
+        <h2 class="section-title">Things I've Built</h2>
+      </div>
+      <div class="projects-grid reveal-stagger" id="projectsGrid">
+        <!-- Loaded dynamically from projects.json -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section reveal">
+      <div class="section-header">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Building with intent</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-narrative">
+          <p>
+            I'm a full-stack developer who started learning to code in 2020
+            during the pandemic out of curiosity about how the web works. What
+            began with HTML and PHP evolved into JavaScript and modern web
+            development.
+          </p>
+          <p>
+            After self-teaching for several years and completing an intensive
+            web development program with Programming Hero, I joined Spark Tech
+            Agency in February 2025 as my first professional role. Working with
+            European clients has sharpened my skills in project planning,
+            execution, and building software that meets real business needs.
+          </p>
+          <p>
+            I care about clean code, honest communication, and shipping products
+            that work well for the people who use them.
+          </p>
         </div>
+        <div class="capabilities" id="capabilities">
+          <!-- Loaded dynamically from technologies.json -->
+        </div>
+      </div>
+    </section>
 
-        <!-- Main Heading with Animated Name -->
-        <h1>Hi, I'm <span class="hero-name">Milon</span></h1>
+    <!-- Journey -->
+    <section id="journey" class="section reveal">
+      <div class="section-header">
+        <p class="section-label">Journey</p>
+        <h2 class="section-title">How I got here</h2>
+      </div>
+      <div class="journey-list reveal-stagger" id="journeyList">
+        <!-- Loaded dynamically from experience.json -->
+      </div>
+    </section>
 
-        <!-- Subtitle -->
-        <p class="hero-subtitle">
-          A full-stack developer passionate about creating beautiful and
-          functional digital experiences. I specialize in building web
-          applications that solve real problems.
+    <!-- Contact -->
+    <section id="contact" class="contact-section reveal">
+      <div class="contact-inner">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let's work together</h2>
+        <p class="contact-desc">
+          Have a project in mind or want to discuss an opportunity? I'm always
+          open to conversations about interesting work.
         </p>
-
-        <!-- Skills Tags (upgraded: skill chips with subtitle) -->
-        <ul class="hero-skills" aria-label="Key skills">
-          <li class="skill-chip">
-            <strong>Full‑Stack</strong>
-            <span class="chip-sub">React · Node.js · TypeScript</span>
-          </li>
-          <li class="skill-chip">
-            <strong>Git & Collaboration</strong>
-            <span class="chip-sub">GitHub · PRs · Team contributions</span>
-          </li>
-          <li class="skill-chip">
-            <strong>Cloud & DevOps</strong>
-            <span class="chip-sub">AWS · Ngnix · Docker · CI/CD</span>
-          </li>
-          <li class="skill-chip">
-            <strong>Realtime</strong>
-            <span class="chip-sub">WebSockets · Redis · Pub/Sub</span>
-          </li>
-        </ul>
-
-        <!-- Stats -->
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-number" data-target="23">0</div>
-            <div class="stat-label">Projects</div>
-          </div>
-          <div class="stat-item">
-            <div
-              class="stat-number"
-              data-calc="smart-years"
-              data-start="2025-02-01"
-            >
-              0
-            </div>
-            <div class="stat-label">Work Exp.</div>
-          </div>
-          <div class="stat-item">
-            <div
-              class="stat-number"
-              data-calc="smart-years"
-              data-start="2023-01-01"
-            >
-              0
-            </div>
-            <div class="stat-label">Self-Study</div>
-          </div>
-        </div>
-
-        <!-- CTA Buttons -->
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div
-        class="scroll-indicator"
-        onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})"
-      >
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section fade-in">
-      <div class="about-simple-wrapper">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-simple-desc">
-          I'm Milon Mia, a full-stack developer focused on building clean,
-          reliable, and high-performance web applications. I enjoy solving
-          complex problems with simple solutions and always strive for clear,
-          accessible user experiences. My work spans frontend and backend, and I
-          love collaborating with teams to deliver impactful products.
-        </p>
-      </div>
-
-      <div class="about-grid-simple">
-        <!-- Technology Section -->
-        <div class="about-column-simple">
-          <h3 class="column-title-simple">Technology</h3>
-          <div class="tech-section-simple">
-            <div class="tech-category-simple">
-              <p class="tech-category-label">Frontend</p>
-              <div class="tech-tags">
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">TypeScript</span>
-                <span class="tech-tag">Tailwind CSS</span>
-                <span class="tech-tag">Vue.js</span>
-              </div>
-            </div>
-            <div class="tech-category-simple">
-              <p class="tech-category-label">Backend</p>
-              <div class="tech-tags">
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Express</span>
-                <span class="tech-tag">GraphQL</span>
-                <span class="tech-tag">REST APIs</span>
-                <span class="tech-tag">WebSocket</span>
-              </div>
-            </div>
-            <div class="tech-category-simple">
-              <p class="tech-category-label">Database & Services</p>
-              <div class="tech-tags">
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">MongoDB</span>
-                <span class="tech-tag">Redis</span>
-                <span class="tech-tag">Firebase</span>
-                <span class="tech-tag">Microservices</span>
-              </div>
-            </div>
-            <div class="tech-category-simple">
-              <p class="tech-category-label">Deployment & DevOps</p>
-              <div class="tech-tags">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Kubernetes</span>
-                <span class="tech-tag">CI/CD</span>
-                <span class="tech-tag">Git</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Soft Skills Section -->
-        <div class="about-column-simple">
-          <h3 class="column-title-simple">Soft Skills</h3>
-          <div class="soft-skills-list-simple">
-            <div class="skill-item-simple">
-              <div class="skill-label">Cross-Platform Development</div>
-              <div class="skill-description">
-                Building backend services for Web, iOS, and Android applications
-                with seamless integration and API design.
-              </div>
-            </div>
-            <div class="skill-item-simple">
-              <div class="skill-label">Team Collaboration</div>
-              <div class="skill-description">
-                Working effectively with UI/UX designers, frontend developers,
-                and mobile app developers to deliver cohesive solutions.
-              </div>
-            </div>
-            <div class="skill-item-simple">
-              <div class="skill-label">Project Leadership</div>
-              <div class="skill-description">
-                Leading projects, making architecture decisions, mentoring team
-                members, and maintaining high code standards.
-              </div>
-            </div>
-            <div class="skill-item-simple">
-              <div class="skill-label">Client Management</div>
-              <div class="skill-description">
-                Direct client communication, technical consulting, requirements
-                gathering, and solution architecture support.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section fade-in">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-list">
-        <!-- Projects will be dynamically loaded from projects.json -->
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section fade-in">
-      <h2 class="section-title" style="margin-bottom: 4rem">Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">2022 - Present</div>
-          <div class="timeline-content">
-            <h3>Senior Developer</h3>
-            <div class="timeline-company">Tech Company Inc.</div>
-            <p class="timeline-description">
-              Leading frontend development for multiple projects, mentoring
-              junior developers, and improving overall code quality and
-              architecture. Implemented performance optimizations that reduced
-              load time by 40%.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2020 - 2022</div>
-          <div class="timeline-content">
-            <h3>Full Stack Developer</h3>
-            <div class="timeline-company">Digital Solutions Ltd.</div>
-            <p class="timeline-description">
-              Developed and maintained full-stack web applications using React
-              and Node.js. Collaborated with design team to implement
-              pixel-perfect UI designs. Reduced API response time by 50% through
-              optimization.
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-date">2019 - 2020</div>
-          <div class="timeline-content">
-            <h3>Junior Developer</h3>
-            <div class="timeline-company">StartUp XYZ</div>
-            <p class="timeline-description">
-              Started my professional journey building React components, fixing
-              bugs, and learning best practices. Contributed to the development
-              of core features that improved user engagement by 35%.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section fade-in">
-      <h2 class="section-title">Let's Connect</h2>
-      <div class="contact-content">
-        <div class="contact-form">
-          <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-            <button
-              type="submit"
-              class="btn btn-primary"
-              style="align-self: flex-start"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">
-              <a href="mailto:hello@Milon.dev">dev.milon923@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Phone</div>
-            <div class="contact-value">
-              <a href="tel:+1234567890">+88 013 3079-2338</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">2000 Jamalpur, BD</div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-label">Others Info</div>
-            <div class="social-links">
-              <a
-                href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
-                target="_blank"
-                >Resume</a
-              >
-              <a href="https://github.com/devmilon923" target="_blank"
-                >GitHub</a
-              >
-              <a href="https://www.linkedin.com/in/devmilon" target="_blank"
-                >LinkedIn</a
-              >
-              <a href="https://www.facebook.com/devmilon923" target="_blank"
-                >Facebook</a
-              >
-            </div>
-          </div>
+        <a href="mailto:dev.milon923@gmail.com" class="contact-email-link">
+          dev.milon923@gmail.com <span class="btn-arrow">→</span>
+        </a>
+        <div class="contact-links">
+          <a
+            href="https://github.com/devmilon923"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+            >GitHub ↗</a
+          >
+          <a
+            href="https://www.linkedin.com/in/devmilon"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+            >LinkedIn ↗</a
+          >
+          <a
+            href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
+            target="_blank"
+            rel="noopener"
+            class="contact-link"
+            >Resume ↗</a
+          >
+          <a href="tel:+8801330792338" class="contact-link"
+            >+88 013 3079-2338</a
+          >
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <p>
-        © 2026 Milon. All rights reserved. Built with passion and clean code.
-      </p>
+      <p>© 2026 Milon Mia</p>
     </footer>
-    <script src="/script.js"></script>
+
+    <script src="./script.js"></script>
   </body>
 </html>

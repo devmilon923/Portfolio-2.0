@@ -2,41 +2,47 @@
   "projects": [
     {
       "id": "01",
-      "title": "DE-Studio agency (Frontend)",
-      "tags": ["Nextjs", "TailwindCSS", "Framer Motion", "App Router"],
-      "description": "DE STUDIO is a modern, fully responsive agency website showcasing brand identity, web design, and development services. It's a frontend-only project with all dynamic content (projects, testimonials, team members, FAQs) managed through JSON data structures for easy maintenance.",
+      "title": "DE-Studio Agency",
+      "type": "Frontend",
+      "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "App Router"],
+      "description": "A modern, fully responsive agency website showcasing brand identity, web design, and development services. All dynamic content managed through JSON data structures for easy maintenance.",
       "liveLink": "https://de-studio.vercel.app",
-      "githubLink": "https://github.com/devmilon923/DE-Studio-agency"
+      "githubLink": "https://github.com/devmilon923/DE-Studio-agency",
+      "featured": true,
+      "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
     },
     {
       "id": "02",
-      "title": "Heirloom App (Backend)",
+      "title": "Heirloom App",
+      "type": "Backend",
       "tags": ["MongoDB", "Node.js", "VectorDB", "OpenAI", "Redis"],
-      "description": "Heirloom is a unique mobile app that uses AI to create a personalized “digital legacy.” It connects users with their loved ones by continuing conversations even after they’re gone, based on data from their interactions..",
+      "description": "An AI-powered mobile app that creates a personalized digital legacy. Connects users with loved ones through continued conversations based on interaction data.",
       "liveLink": "https://docs.google.com/document/d/1yBOvfoGFhI0K0byIBn4FOLgDtfhz0f1z8s1K7cEz-0U/edit?tab=t.0#heading=h.yycmiykqlitc",
-      "githubLink": "https://github.com/devmilon923/Heirloom-App-Backend"
+      "githubLink": "https://github.com/devmilon923/Heirloom-App-Backend",
+      "featured": true,
+      "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
     },
     {
       "id": "03",
-      "title": "Chatcrypt Web Application",
-      "tags": ["Node.js", "MongoDB", "SocketIO", "JWT"],
-      "description": "Chatcrypt is a secure, anonymous chat app that stores messages temporarily and deletes them daily for privacy. It supports real-time chats, media sharing, and server status monitoring. Built with Node.js, React, and hosted on Render.",
+      "title": "Chatcrypt",
+      "type": "Full-Stack",
+      "tags": ["Node.js", "MongoDB", "Socket.IO", "JWT"],
+      "description": "A secure, anonymous chat application with ephemeral messages that auto-delete daily. Features real-time messaging, media sharing, and server status monitoring.",
       "liveLink": "https://chatcrypt.netlify.app/",
-      "githubLink": "https://github.com/devmilon923/Chatcrypt"
+      "githubLink": "https://github.com/devmilon923/Chatcrypt",
+      "featured": true,
+      "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
     },
     {
       "id": "04",
-      "title": "Word Bound – Multiplayer Word Game",
-      "tags": [
-        "Node.js",
-        "TypeScript",
-        "Vanila Frontend",
-        "SocketIO",
-        "DictionaryAPI"
-      ],
-      "description": "Developed a multiplayer word game where players take turns forming words that start with the last letter of the previous word. Includes a real-time typing preview system, allowing players to see the other player’s typing as they type, enhancing the interaction and experience.",
+      "title": "Word Bound",
+      "type": "Multiplayer Game",
+      "tags": ["Node.js", "TypeScript", "Socket.IO", "Dictionary API"],
+      "description": "A real-time multiplayer word game where players form words starting with the last letter of the previous word. Features live typing preview for enhanced interaction.",
       "liveLink": "https://word-bound.netlify.app/",
-      "githubLink": "https://github.com/devmilon923/Word-Game"
+      "githubLink": "https://github.com/devmilon923/Word-Game",
+      "featured": true,
+      "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     }
   ]
 }

@@ -1,68 +1,42 @@
-async function loadTechnologies() {
-  try {
-    const response = await fetch("data/technologies.json");
-    const data = await response.json();
-    const techSection = document.querySelector(".tech-section-simple");
+/* ============================================
+   Portfolio 2.0 — Script
+   Handles: dynamic content, nav, scroll reveals
+   ============================================ */
 
-    techSection.innerHTML = data.categories
-      .map(
-        (category) => `
-            <div class="tech-category-simple">
-                <p class="tech-category-label">${category.name}</p>
-                <div class="tech-tags">
-                    ${category.technologies
-                      .map(
-                        (tech) => `
-                        <span class="tech-tag">${tech}</span>
-                    `
-                      )
-                      .join("")}
-                </div>
-            </div>
-        `
-      )
-      .join("");
-  } catch (error) {
-    console.error("Error loading technologies:", error);
-  }
-}
+// --- Dynamic Content Loading ---
 
 async function loadProjects() {
   try {
     const response = await fetch("data/projects.json");
     const data = await response.json();
-    const projectsList = document.querySelector(".projects-list");
+    const grid = document.getElementById("projectsGrid");
+    if (!grid) return;
 
-    projectsList.innerHTML = data.projects
+    grid.innerHTML = data.projects
+      .filter((p) => p.featured)
       .map(
         (project) => `
-            <div class="project-item">
-                <div class="project-header">
-                    <div class="project-number">${project.id}</div>
-                    <div class="project-info">
-                        <h3>${project.title}</h3>
-                        <div class="project-tags">
-                            ${project.tags
-                              .map(
-                                (tag) => `
-                                <span class="project-tag">${tag}</span>
-                            `
-                              )
-                              .join("")}
-                        </div>
-                    </div>
-                </div>
-                <p class="project-description">${project.description}</p>
-                <div class="project-links">
-                    <a target="_blank" href="${
-                      project.liveLink
-                    }" class="project-link">View More →</a>
-                    <a href="${
-                      project.githubLink
-                    }" class="project-link" target="_blank">GitHub →</a>
-                </div>
+        <article class="project-card">
+          <div class="project-card-head">
+            <h3>${project.title}</h3>
+            <span class="project-type-badge">${project.type}</span>
+          </div>
+          <div class="project-card-body">
+            <p class="project-desc">${project.description}</p>
+            <div class="project-tags">
+              ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("")}
             </div>
-        `
+            <div class="project-links">
+              <a href="${project.liveLink}" target="_blank" rel="noopener" class="project-link">
+                Live Demo <span>↗</span>
+              </a>
+              <a href="${project.githubLink}" target="_blank" rel="noopener" class="project-link">
+                Code <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      `,
       )
       .join("");
   } catch (error) {
@@ -70,303 +44,192 @@ async function loadProjects() {
   }
 }
 
-async function loadExperience() {
+async function loadCapabilities() {
   try {
-    const response = await fetch("data/experience.json");
+    const response = await fetch("data/technologies.json");
     const data = await response.json();
-    const timeline = document.querySelector(".timeline");
+    const container = document.getElementById("capabilities");
+    if (!container) return;
 
-    timeline.innerHTML = data.experiences
+    container.innerHTML = data.categories
       .map(
-        (exp) => `
-            <div class="timeline-item">
-                <div class="timeline-date">${exp.period}</div>
-                <div class="timeline-content">
-                    <h3>${exp.role}</h3>
-                    <div class="timeline-company">${exp.company}</div>
-                    <p class="timeline-description">${exp.description}</p>
-                </div>
-            </div>
-        `
+        (category) => `
+        <div class="capability-group">
+          <h3>${category.name}</h3>
+          <div class="capability-tags">
+            ${category.technologies.map((tech) => `<span class="capability-tag">${tech}</span>`).join("")}
+          </div>
+        </div>
+      `,
       )
       .join("");
   } catch (error) {
-    console.error("Error loading experience:", error);
+    console.error("Error loading capabilities:", error);
   }
 }
 
-// Calculate months between two dates
-function calculateMonths(startDate, endDate = null) {
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
+async function loadJourney() {
+  try {
+    const response = await fetch("data/experience.json");
+    const data = await response.json();
+    const list = document.getElementById("journeyList");
+    if (!list) return;
 
-  let months = (end.getFullYear() - start.getFullYear()) * 12;
-  months += end.getMonth() - start.getMonth();
-
-  return Math.max(0, months);
-}
-
-// Calculate smart years (show months if < 12, years if >= 12)
-function calculateSmartYears(startDate, endDate = null) {
-  const months = calculateMonths(startDate, endDate);
-
-  // If less than 12 months, return as is for month display
-  if (months < 12) {
-    return months;
+    list.innerHTML = data.experiences
+      .map(
+        (exp) => `
+        <div class="journey-item">
+          <div class="journey-date">${exp.period}</div>
+          <div class="journey-content">
+            <h3>${exp.role}</h3>
+            <p class="journey-company">${exp.company}</p>
+            <p class="journey-desc">${exp.description}</p>
+          </div>
+        </div>
+      `,
+      )
+      .join("");
+  } catch (error) {
+    console.error("Error loading journey:", error);
   }
-
-  // Otherwise convert to whole years
-  return Math.floor(months / 12);
 }
 
-// Calculate years between two dates (in decimal format where 1 month = 0.01)
-function calculateYears(startDate, endDate = null) {
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
+// --- Mobile Menu ---
 
-  let months = (end.getFullYear() - start.getFullYear()) * 12;
-  months += end.getMonth() - start.getMonth();
-
-  // Convert months to decimal years (1 month = 0.01 years)
-  return Math.max(0, months / 100);
-}
-
-function animateCounter(element) {
-  let target = parseInt(element.getAttribute("data-target"));
-  let unit = ""; // For smart display
-  let labelSuffix = ""; // For dynamic label
-
-  // Check if this is a calculated value
-  const calcType = element.getAttribute("data-calc");
-  if (calcType) {
-    const startDate = element.getAttribute("data-start");
-    const endDate = element.getAttribute("data-end");
-
-    if (calcType === "months") {
-      target = calculateMonths(startDate, endDate);
-    } else if (calcType === "years") {
-      target = calculateYears(startDate, endDate);
-    } else if (calcType === "smart-years") {
-      const months = calculateMonths(startDate, endDate);
-      if (months < 12) {
-        target = months;
-        unit = "M"; // Month
-      } else {
-        target = Math.floor(months / 12);
-        unit = "Y"; // Year
-        const years = Math.floor(months / 12);
-      }
-
-      // Update the label in the next sibling element
-      const labelElement = element.nextElementSibling;
-      if (labelElement && labelElement.classList.contains("stat-label")) {
-        const baseLabel =
-          labelElement.getAttribute("data-base-label") ||
-          labelElement.textContent.replace(/\s(Month|Year)s?$/i, "");
-        labelElement.setAttribute("data-base-label", baseLabel);
-        labelElement.textContent = baseLabel + labelSuffix;
-      }
-    }
-  }
-
-  const duration = 2000;
-  const increment = target / (duration / 16);
-  let current = 0;
-  const isCalculated = element.getAttribute("data-calc");
-
-  const updateCounter = () => {
-    current += increment;
-    if (current < target) {
-      if (isCalculated === "smart-years") {
-        if (unit === "M") {
-          element.textContent = Math.floor(current) + " Months";
-        } else {
-          element.textContent = Math.floor(current) + " Years";
-        }
-      } else if (isCalculated) {
-        element.textContent = current.toFixed(2) + "+";
-      } else {
-        element.textContent = Math.floor(current) + "+";
-      }
-      requestAnimationFrame(updateCounter);
-    } else {
-      if (isCalculated === "smart-years") {
-        if (unit === "M") {
-          element.textContent = Math.floor(target) + " Month";
-        } else {
-          element.textContent = Math.floor(target) + " Year";
-        }
-      } else if (isCalculated) {
-        element.textContent = target.toFixed(2) + "+";
-      } else {
-        element.textContent = target + "+";
-      }
-    }
-  };
-
-  updateCounter();
-}
-
-const statsObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const statNumbers = entry.target.querySelectorAll(".stat-number");
-        statNumbers.forEach((stat) => animateCounter(stat));
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
-
-const heroStats = document.querySelector(".hero-stats");
-if (heroStats) {
-  statsObserver.observe(heroStats);
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  const submitBtn = event.target.querySelector('button[type="submit"]');
-  submitBtn.classList.add("btn-loading");
-  submitBtn.disabled = true;
-  submitBtn.innerHTML =
-    '<div style="display: inline-flex; align-items: center; height: 100%;"><span class="btn-text">Sending</span><span class="btn-dots"></span></div>';
-
-  fetch(
-    "https://api.telegram.org/bot6376636664:AAEEn-R-2XvEo3oJWdie1wQDEQSAk9ZBpCU/sendMessage",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: 6026204169,
-        text: `
-        ------------New Message-------------
-
-        Subject: ${event.target.elements.subject.value}
-        Name: ${event.target.elements.name.value}
-        Email: ${event.target.elements.email.value}
-        message: ${event.target.elements.message.value}
-        --------------------------------------------
-        `,
-      }),
-    }
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-      // Show success state
-      submitBtn.classList.remove("btn-loading");
-      submitBtn.classList.add("btn-success");
-      submitBtn.innerHTML =
-        '<div style="display: inline-flex; align-items: center; height: 100%;"><span class="btn-text">Sent</span><span class="btn-icon">✓</span></div>';
-      event.target.reset();
-
-      // Reset button after 2 seconds
-      setTimeout(() => {
-        submitBtn.classList.remove("btn-success");
-        submitBtn.innerHTML =
-          '<div style="display: inline-flex; align-items: center; height: 100%;"><span class="btn-text">Send Message</span></div>';
-        submitBtn.disabled = false;
-      }, 2000);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      // Show error state
-      submitBtn.classList.remove("btn-loading");
-      submitBtn.classList.add("btn-error");
-      submitBtn.innerHTML =
-        '<div style="display: inline-flex; align-items: center; height: 100%;"><span class="btn-text">Failed</span><span class="btn-icon">×</span></div>';
-
-      // Reset button after 2 seconds
-      setTimeout(() => {
-        submitBtn.classList.remove("btn-error");
-        submitBtn.innerHTML =
-          '<div style="display: inline-flex; align-items: center; height: 100%;"><span class="btn-text">Send Message</span></div>';
-        submitBtn.disabled = false;
-      }, 2000);
-    });
-}
-
-// Mobile Menu
-function toggleMenu() {
+function initMobileMenu() {
+  const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-  const menuBtn = document.querySelector(".menu-btn");
+  if (!menuBtn || !mobileMenu) return;
 
-  mobileMenu.classList.toggle("active");
-  menuBtn.classList.toggle("active");
-
-  // Change menu icon
-  if (mobileMenu.classList.contains("active")) {
-    menuBtn.textContent = "✕";
-  } else {
-    menuBtn.textContent = "☰";
-  }
-}
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".mobile-menu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    const mobileMenu = document.getElementById("mobileMenu");
-    const menuBtn = document.querySelector(".menu-btn");
-
-    mobileMenu.classList.remove("active");
-    menuBtn.classList.remove("active");
-    menuBtn.textContent = "☰";
+  menuBtn.addEventListener("click", () => {
+    const isActive = mobileMenu.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+    menuBtn.setAttribute("aria-expanded", isActive);
+    document.body.style.overflow = isActive ? "hidden" : "";
   });
-});
 
-// Close menu when clicking outside
-document.addEventListener("click", (e) => {
-  const mobileMenu = document.getElementById("mobileMenu");
-  const menuBtn = document.querySelector(".menu-btn");
-  const navbar = document.querySelector(".navbar");
+  // Close menu when clicking a link
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+      menuBtn.classList.remove("active");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    });
+  });
 
-  if (!navbar.contains(e.target) && mobileMenu.classList.contains("active")) {
-    mobileMenu.classList.remove("active");
-    menuBtn.classList.remove("active");
-    menuBtn.textContent = "☰";
-  }
-});
-
-// Initialize dynamic content loading
-document.addEventListener("DOMContentLoaded", () => {
-  loadTechnologies();
-  loadProjects();
-  loadExperience();
-});
-
-// Scroll Animation
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px",
-};
-
-const observer = new IntersectionObserver(function (entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+  // Close on outside click
+  document.addEventListener("click", (e) => {
+    if (
+      mobileMenu.classList.contains("active") &&
+      !mobileMenu.contains(e.target) &&
+      !menuBtn.contains(e.target)
+    ) {
+      mobileMenu.classList.remove("active");
+      menuBtn.classList.remove("active");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
     }
   });
-}, observerOptions);
+}
 
-document.querySelectorAll(".fade-in").forEach((el) => {
-  observer.observe(el);
-});
+// --- Scroll Reveal ---
 
-// Smooth Navigation
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    const href = this.getAttribute("href");
-    if (href !== "#") {
+function initScrollReveal() {
+  const reveals = document.querySelectorAll(".reveal, .reveal-stagger");
+  if (!reveals.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+  );
+
+  reveals.forEach((el) => observer.observe(el));
+}
+
+// --- Active Nav Link ---
+
+function initActiveNav() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a[data-section]");
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("data-section") === id,
+            );
+          });
+        }
+      });
+    },
+    { threshold: 0.3, rootMargin: "-80px 0px -50% 0px" },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+}
+
+// --- Smooth Scroll ---
+
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href === "#") return;
+
       e.preventDefault();
-      const target = document.getElementById(href.substring(1));
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
-    }
+    });
   });
+}
+
+// --- Navbar scroll behavior ---
+
+function initNavScroll() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  let lastScrollY = 0;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const scrollY = window.scrollY;
+      if (scrollY > 100) {
+        navbar.style.borderBottomColor = "var(--color-border)";
+      } else {
+        navbar.style.borderBottomColor = "var(--color-border-subtle)";
+      }
+      lastScrollY = scrollY;
+    },
+    { passive: true },
+  );
+}
+
+// --- Initialize ---
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadProjects();
+  loadCapabilities();
+  loadJourney();
+  initMobileMenu();
+  initScrollReveal();
+  initActiveNav();
+  initSmoothScroll();
+  initNavScroll();
 });
