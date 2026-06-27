@@ -1,6 +1,6 @@
 /* ============================================
    Portfolio 2.0 — Script
-   Handles: dynamic content, nav, scroll reveals
+   Handles: dynamic content loading, nav, scroll reveals
    ============================================ */
 
 // --- Dynamic Content Loading ---
@@ -16,24 +16,29 @@ async function loadProjects() {
       .filter((p) => p.featured)
       .map(
         (project) => `
-        <article class="project-card">
-          <div class="project-card-head">
-            <h3>${project.title}</h3>
-            <span class="project-type-badge">${project.type}</span>
+        <article class="project-card ${project.pastelClass || 'sprout-tint'}">
+          <div>
+            <div class="project-card-header">
+              <div class="project-icon-tile">
+                ${project.title[0]}
+              </div>
+              <span class="project-type">${project.type}</span>
+            </div>
+            <div class="project-card-body">
+              <h3>${project.title}</h3>
+              <p class="project-desc">${project.description}</p>
+              <div class="project-tags">
+                ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("")}
+              </div>
+            </div>
           </div>
-          <div class="project-card-body">
-            <p class="project-desc">${project.description}</p>
-            <div class="project-tags">
-              ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join("")}
-            </div>
-            <div class="project-links">
-              <a href="${project.liveLink}" target="_blank" rel="noopener" class="project-link">
-                Live Demo <span>↗</span>
-              </a>
-              <a href="${project.githubLink}" target="_blank" rel="noopener" class="project-link">
-                Code <span>↗</span>
-              </a>
-            </div>
+          <div class="project-links">
+            <a href="${project.liveLink}" target="_blank" rel="noopener" class="project-link">
+              Live Demo <span>↗</span>
+            </a>
+            <a href="${project.githubLink}" target="_blank" rel="noopener" class="project-link">
+              Code <span>↗</span>
+            </a>
           </div>
         </article>
       `,
@@ -54,7 +59,7 @@ async function loadCapabilities() {
     container.innerHTML = data.categories
       .map(
         (category) => `
-        <div class="capability-group">
+        <div class="capability-row">
           <h3>${category.name}</h3>
           <div class="capability-tags">
             ${category.technologies.map((tech) => `<span class="capability-tag">${tech}</span>`).join("")}
@@ -78,11 +83,13 @@ async function loadJourney() {
     list.innerHTML = data.experiences
       .map(
         (exp) => `
-        <div class="journey-item">
-          <div class="journey-date">${exp.period}</div>
+        <div class="journey-card">
+          <div class="journey-meta">
+            <div class="journey-date">${exp.period}</div>
+            <div class="journey-company">${exp.company}</div>
+          </div>
           <div class="journey-content">
             <h3>${exp.role}</h3>
-            <p class="journey-company">${exp.company}</p>
             <p class="journey-desc">${exp.description}</p>
           </div>
         </div>
@@ -94,7 +101,7 @@ async function loadJourney() {
   }
 }
 
-// --- Mobile Menu ---
+// --- Mobile Menu Overlay ---
 
 function initMobileMenu() {
   const menuBtn = document.getElementById("menuBtn");
@@ -148,13 +155,13 @@ function initScrollReveal() {
         }
       });
     },
-    { threshold: 0.1, rootMargin: "0px 0px -60px 0px" },
+    { threshold: 0.08, rootMargin: "0px 0px -40px 0px" },
   );
 
   reveals.forEach((el) => observer.observe(el));
 }
 
-// --- Active Nav Link ---
+// --- Active Nav Link Highlight ---
 
 function initActiveNav() {
   const sections = document.querySelectorAll("section[id]");
@@ -175,13 +182,13 @@ function initActiveNav() {
         }
       });
     },
-    { threshold: 0.3, rootMargin: "-80px 0px -50% 0px" },
+    { threshold: 0.2, rootMargin: "-80px 0px -50% 0px" },
   );
 
   sections.forEach((section) => observer.observe(section));
 }
 
-// --- Smooth Scroll ---
+// --- Smooth Scroll for anchor tags ---
 
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -198,35 +205,32 @@ function initSmoothScroll() {
   });
 }
 
-// --- Navbar scroll behavior ---
+// --- Navbar Scrolled Class Handler ---
 
 function initNavScroll() {
   const navbar = document.getElementById("navbar");
   if (!navbar) return;
 
-  let lastScrollY = 0;
-
   window.addEventListener(
     "scroll",
     () => {
-      const scrollY = window.scrollY;
-      if (scrollY > 100) {
-        navbar.style.borderBottomColor = "var(--color-border)";
+      if (window.scrollY > 20) {
+        navbar.classList.add("navbar-scrolled");
       } else {
-        navbar.style.borderBottomColor = "var(--color-border-subtle)";
+        navbar.classList.remove("navbar-scrolled");
       }
-      lastScrollY = scrollY;
     },
     { passive: true },
   );
 }
 
-// --- Initialize ---
+// --- Initialize All Handlers ---
 
-document.addEventListener("DOMContentLoaded", () => {
-  loadProjects();
-  loadCapabilities();
-  loadJourney();
+document.addEventListener("DOMContentLoaded", async () => {
+  // Load dynamic data first
+  await Promise.all([loadProjects(), loadCapabilities(), loadJourney()]);
+  
+  // Initialize interactions
   initMobileMenu();
   initScrollReveal();
   initActiveNav();

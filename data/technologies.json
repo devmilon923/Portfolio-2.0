@@ -2,19 +2,50 @@
   "categories": [
     {
       "name": "Frontend",
-      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      "technologies": [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Tailwind CSS",
+        "React Query",
+        "Shadcn UI"
+      ]
     },
     {
-      "name": "Backend",
-      "technologies": ["Node.js", "Express.js", "REST APIs"]
+      "name": "Backend & Realtime",
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "Socket.IO",
+        "BullMQ",
+        "GraphQL",
+        "LLM"
+      ]
     },
     {
-      "name": "Databases",
-      "technologies": ["MongoDB", "Postgres", "Prisma"]
+      "name": "Database & ORMs",
+      "technologies": [
+        "MongoDB",
+        "Redis",
+        "Postgres",
+        "Prisma",
+        "Mongoose",
+        "Pinecone"
+      ]
     },
     {
-      "name": "DevOps",
-      "technologies": ["Docker", "AWS", "Git"]
+      "name": "DevOps & Tools",
+      "technologies": [
+        "AWS EC2",
+        "Docker",
+        "Nginx",
+        "GitHub Actions CI/CD",
+        "Linux",
+        "Git",
+        "VS Code",
+        "Postman"
+      ]
     }
   ]
 }

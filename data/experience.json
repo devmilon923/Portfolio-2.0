@@ -1,22 +1,28 @@
 {
   "experiences": [
     {
-      "period": "2025 - 2026",
+      "period": "Feb 2025 – Mar 2026",
       "role": "Full-Stack Developer",
-      "company": "Spark Tech Agency",
-      "description": "Worked on full-stack web applications using React, TypeScript, Node.js, and MongoDB for European clients. Developed secure RESTful APIs, optimized application performance, and deployed production systems using Docker, AWS EC2, and GitHub Actions. Built several key projects including Heirloom (AI-powered system) and worked on diverse client projects."
+      "company": "Spark Tech Agency (Betopia Group)",
+      "description": "Built full-stack web applications using React, TypeScript, Node.js, and MongoDB for European clients. Architected and developed Heirloom, an AI-powered system featuring dual-memory architecture. Optimized API performance by 40% using Redis caching and MongoDB indexing, and deployed systems using AWS EC2, Docker, and GitHub Actions CI/CD."
     },
     {
-      "period": "2024 - 2025",
-      "role": "Completed Web Development",
-      "company": "by Progamming Hero",
-      "description": "After jumping into JavaScript, I completed the basic MERN roadmap with Sumit Sir and online resources. Realizing that self-learning alone isn't enough, I joined Programming Hero to further polish my skills. I wanted to test myself, compare with others, and dedicate 6 months to achieving something great."
+      "period": "Jun 2024",
+      "role": "MERN Stack Certification",
+      "company": "Programming Hero (Credential ID: WEB10-1794)",
+      "description": "Completed a 6-month intensive web development program covering React, Node.js, MongoDB, and Express to validate self-taught web engineering and database expertise."
     },
     {
-      "period": "2020 - 2024",
-      "role": "Self Study",
-      "company": "from Home",
-      "description": "In 2020, during the coronavirus pandemic, I had a self-realization about my future and decided to explore programming, focusing on web development. I started with HTML, CSS, and PHP, working on projects with Laravel 10 and MySQL. Later, I expanded my knowledge by learning JavaScript with Sumit Sir."
+      "period": "2020 – 2024",
+      "role": "Self-Taught Web Engineering",
+      "company": "Independent Study",
+      "description": "Explored the fundamentals of web architecture, starting with HTML, CSS, PHP, and Laravel 10/MySQL. Transitioned to JavaScript, TypeScript, and modern asynchronous programming patterns."
+    },
+    {
+      "period": "2019 – 2023",
+      "role": "Diploma in Electrical Engineering",
+      "company": "Rumdo Institute of Modern Technology",
+      "description": "Acquired engineering foundations, systems logic, and problem-solving principles in Mymensingh, Bangladesh."
     }
   ]
 }

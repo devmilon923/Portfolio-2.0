@@ -5,41 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
-    <title>Milon Mia — Full-Stack Developer</title>
-    <meta name="title" content="Milon Mia — Full-Stack Developer" />
+    <title>Milon Mia — Backend & AI Systems Engineer</title>
+    <meta name="title" content="Milon Mia — Backend & AI Systems Engineer" />
     <meta
       name="description"
-      content="Full-stack developer building products with React, Node.js, and cloud technologies. Currently at Spark Tech Agency."
+      content="Backend & AI Systems Engineer specializing in high-throughput architectures, multi-user chat isolation, and semantic search integration. Expert in Node.js, Redis, and Vector Databases."
     />
     <meta
       name="keywords"
-      content="Milon Mia, Full Stack Developer, React, Node.js, TypeScript, AWS, MongoDB"
+      content="Milon Mia, Backend Engineer, AI Systems Engineer, Node.js developer, Vector Database, Redis Queue, BullMQ, MongoDB performance indexing, real-time messaging, multi-user memory isolation, systems architect"
     />
     <meta name="author" content="Milon Mia" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://milon.bro.bd/" />
-    <meta property="og:title" content="Milon Mia — Full-Stack Developer" />
+    <meta
+      property="og:title"
+      content="Milon Mia — Backend & AI Systems Engineer"
+    />
     <meta
       property="og:description"
-      content="Full-stack developer building products with React, Node.js, and cloud technologies."
+      content="Backend & AI Systems Engineer building high-performance architectures, Redis job queues, and semantic search systems."
     />
     <meta property="og:image" content="./data/images/boy.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://milon.bro.bd/" />
-    <meta property="twitter:title" content="Milon Mia — Full-Stack Developer" />
+    <meta
+      property="twitter:title"
+      content="Milon Mia — Backend & AI Systems Engineer"
+    />
     <meta
       property="twitter:description"
-      content="Full-stack developer building products with React, Node.js, and cloud technologies."
+      content="Backend & AI Systems Engineer building high-performance architectures, Redis job queues, and semantic search systems."
     />
     <meta property="twitter:image" content="./data/images/boy.png" />
 
     <!-- Technical -->
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#FAFAF8" />
+    <meta name="theme-color" content="#f7f6f2" />
 
     <link
       rel="shortcut icon"
@@ -49,10 +55,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Top Navigation Bar -->
     <nav class="navbar" id="navbar">
       <div class="nav-content">
-        <a href="#" class="logo">Dev.Milon</a>
+        <a href="#" class="logo" id="logoLink">
+          <div class="logo-mark"></div>
+          <span>Milon Mia</span>
+        </a>
         <ul class="nav-links">
           <li><a href="#work" data-section="work">Work</a></li>
           <li><a href="#about" data-section="about">About</a></li>
@@ -73,7 +82,7 @@
       </div>
     </nav>
 
-    <!-- Mobile Menu -->
+    <!-- Mobile Menu Overlay -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="#work">Work</a></li>
@@ -91,133 +100,176 @@
       </ul>
     </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <p class="hero-eyebrow">
-        <span class="dot"></span>
-        Currently at Home
-      </p>
-
-      <h1>Milon Mia</h1>
-
-      <p class="hero-subtitle">
-        Full-stack developer building reliable products with React, Node.js, and
-        cloud infrastructure. I focus on clean code and products that work.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#work" class="btn btn-primary">
-          View My Work <span class="btn-arrow">↓</span>
-        </a>
-        <a
-          href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-secondary"
-        >
-          Resume <span class="btn-arrow">↗</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Selected Work -->
-    <section id="work" class="section reveal">
-      <div class="section-header">
-        <p class="section-label">Selected Work</p>
-        <h2 class="section-title">Things I've Built</h2>
-      </div>
-      <div class="projects-grid reveal-stagger" id="projectsGrid">
-        <!-- Loaded dynamically from projects.json -->
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section reveal">
-      <div class="section-header">
-        <p class="section-label">About</p>
-        <h2 class="section-title">Building with intent</h2>
-      </div>
-      <div class="about-grid">
-        <div class="about-narrative">
-          <p>
-            I'm a full-stack developer who started learning to code in 2020
-            during the pandemic out of curiosity about how the web works. What
-            began with HTML and PHP evolved into JavaScript and modern web
-            development.
-          </p>
-          <p>
-            After self-teaching for several years and completing an intensive
-            web development program with Programming Hero, I joined Spark Tech
-            Agency in February 2025 as my first professional role. Working with
-            European clients has sharpened my skills in project planning,
-            execution, and building software that meets real business needs.
-          </p>
-          <p>
-            I care about clean code, honest communication, and shipping products
-            that work well for the people who use them.
-          </p>
-        </div>
-        <div class="capabilities" id="capabilities">
-          <!-- Loaded dynamically from technologies.json -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Journey -->
-    <section id="journey" class="section reveal">
-      <div class="section-header">
-        <p class="section-label">Journey</p>
-        <h2 class="section-title">How I got here</h2>
-      </div>
-      <div class="journey-list reveal-stagger" id="journeyList">
-        <!-- Loaded dynamically from experience.json -->
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact-section reveal">
-      <div class="contact-inner">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Let's work together</h2>
-        <p class="contact-desc">
-          Have a project in mind or want to discuss an opportunity? I'm always
-          open to conversations about interesting work.
+    <!-- Main Container -->
+    <main class="container">
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <p class="hero-eyebrow">
+          <span class="dot"></span>
+          Available for new opportunities
         </p>
-        <a href="mailto:dev.milon923@gmail.com" class="contact-email-link">
-          dev.milon923@gmail.com <span class="btn-arrow">→</span>
-        </a>
-        <div class="contact-links">
-          <a
-            href="https://github.com/devmilon923"
-            target="_blank"
-            rel="noopener"
-            class="contact-link"
-            >GitHub ↗</a
-          >
-          <a
-            href="https://www.linkedin.com/in/devmilon"
-            target="_blank"
-            rel="noopener"
-            class="contact-link"
-            >LinkedIn ↗</a
-          >
+
+        <h1>
+          Engineering high-performance
+          <span class="accent-word">backend & AI</span> systems
+        </h1>
+
+        <p class="hero-subtitle">
+          Backend & AI Systems Engineer specializing in multi-tenant memory
+          isolation, database optimization, and high-throughput real-time APIs.
+          Building reliable digital foundations.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#work" class="btn btn-primary">
+            View My Work <span class="btn-arrow">↓</span>
+          </a>
           <a
             href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
             target="_blank"
             rel="noopener"
-            class="contact-link"
-            >Resume ↗</a
+            class="btn btn-secondary"
           >
-          <a href="tel:+8801330792338" class="contact-link"
-            >+88 013 3079-2338</a
-          >
+            Resume <span class="btn-arrow">↗</span>
+          </a>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <!-- Selected Work Section -->
+      <section id="work" class="section reveal">
+        <div class="section-header">
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Featured Systems</h2>
+        </div>
+        <div class="projects-grid reveal-stagger" id="projectsGrid">
+          <!-- Loaded dynamically from projects.json -->
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section reveal">
+        <div class="section-header">
+          <p class="section-label">About</p>
+          <h2 class="section-title">Building with intent</h2>
+        </div>
+        <div class="about-bento-grid">
+          <div class="bento-card bento-bio">
+            <p class="bento-card-label">Biography</p>
+            <p>
+              I am a Backend & AI Systems Engineer with professional agency
+              experience, specializing in scaling web applications and building
+              backend systems for web, iOS, and Android. My journey started in
+              2020 out of a deep curiosity about how servers and network layers
+              function.
+            </p>
+            <p>
+              After refining my engineering skills independently, I completed a
+              structured MERN stack program with Programming Hero in 2024. Soon
+              after, I joined Spark Tech Agency (Betopia Group) as a Full-Stack
+              Developer, where I built enterprise-grade applications, optimized
+              database query aggregation pipelines, and deployed scalable
+              Dockerized backends on AWS.
+            </p>
+            <p>
+              I focus on codebase sustainability, solid database schema
+              architecture, caching layers, and asynchronous task workers. I
+              believe in writing clear code and collaborating transparently to
+              ship products that last.
+            </p>
+          </div>
+
+          <div class="bento-card bento-stats">
+            <p class="bento-card-label">System Metrics</p>
+            <div class="stat-list">
+              <div class="stat-item">
+                <span class="stat-number">40%</span>
+                <span class="stat-desc"
+                  >API latency optimization via Redis & index design</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">Dual</span>
+                <span class="stat-desc"
+                  >AI memory architectures engineered (Heirloom)</span
+                >
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">Docker</span>
+                <span class="stat-desc"
+                  >Scalable server deployments on AWS cloud</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-card bento-capabilities-wrapper">
+            <p class="bento-card-label">Capabilities</p>
+            <div class="capabilities-list" id="capabilities">
+              <!-- Loaded dynamically from technologies.json -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Journey Section -->
+      <section id="journey" class="section reveal">
+        <div class="section-header">
+          <p class="section-label">Journey</p>
+          <h2 class="section-title">Professional Timeline</h2>
+        </div>
+        <div class="journey-list reveal-stagger" id="journeyList">
+          <!-- Loaded dynamically from experience.json -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact-section reveal">
+        <div class="contact-card">
+          <p class="section-label">Contact</p>
+          <h2 class="section-title">Let's build something great</h2>
+          <p class="contact-desc">
+            Have a project in mind, need to optimize your backend systems, or
+            want to discuss a software engineering opportunity? Let's connect.
+          </p>
+          <a href="mailto:dev.milon923@gmail.com" class="contact-email-link">
+            dev.milon923@gmail.com
+          </a>
+          <div class="contact-links">
+            <a
+              href="https://github.com/devmilon923"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+              >GitHub ↗</a
+            >
+            <a
+              href="https://www.linkedin.com/in/devmilon"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1PvK_85u1AuyiD-OQdLakm5oEoAaVPWkW/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              class="contact-link"
+              >Resume ↗</a
+            >
+            <a href="tel:+8801330792338" class="contact-link"
+              >+88 013 3079-2338</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Milon Mia</p>
+      <div class="footer-content">
+        <p>© 2026 Milon Mia. Handcrafted with intent.</p>
+        <p>2000 Jamalpur, Bangladesh</p>
+      </div>
     </footer>
 
     <script src="./script.js"></script>

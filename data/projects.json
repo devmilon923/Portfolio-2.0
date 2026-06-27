@@ -2,54 +2,66 @@
   "projects": [
     {
       "id": "01",
+      "title": "Heirloom App",
+      "type": "Backend / AI System",
+      "tags": [
+        "Node.js",
+        "TypeScript",
+        "MongoDB",
+        "VectorDB",
+        "OpenAI LLM",
+        "Redis",
+        "BullMQ"
+      ],
+      "description": "An AI-powered system with a custom dual-memory architecture (short-term + long-term) for persistent conversations. Features real-time context extraction, semantic search, and secure multi-user chat isolation. Includes unified APIs optimized for web, iOS, and Android platforms, yielding a 40% performance gain.",
+      "liveLink": "https://docs.google.com/document/d/1yBOvfoGFhI0K0byIBn4FOLgDtfhz0f1z8s1K7cEz-0U/edit?tab=t.0#heading=h.yycmiykqlitc",
+      "githubLink": "https://github.com/devmilon923/Heirloom-App-Backend",
+      "featured": true,
+      "pastelClass": "sprout-tint",
+      "accentColor": "#16a34a"
+    },
+    {
+      "id": "02",
       "title": "Storiboard",
-      "type": "Full-Stack",
+      "type": "Full-Stack Platform",
       "tags": [
         "Node.js",
         "TypeScript",
         "Postgres",
-        "BullMQ",
         "Prisma",
+        "BullMQ",
         "Next.js"
       ],
-      "description": "Storiboard is a fully-featured, highly interactive social blogging platform designed for dreamers, writers, and creators. It offers a beautiful, glassmorphic UI, rich interactive components, and real-time style actions designed to help users share their stories, fiction, memoirs, and ideas without limits.",
+      "description": "A feature-rich social blogging platform for creators. Features OTP-based authentication, JWT sessions, and RBAC. Includes async Redis job queues for feed generation, a personalized feed algorithm, cursor-based pagination, and a full rich-media post system with threaded comments, likes, and bookmarks.",
       "liveLink": "https://storiboard.netlify.app",
       "githubLink": "https://github.com/devmilon923/Storiboard-UI",
       "featured": true,
-      "gradient": "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
-    },
-    {
-      "id": "02",
-      "title": "DE-Studio Agency",
-      "type": "Frontend",
-      "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "App Router"],
-      "description": "A modern, fully responsive agency website showcasing brand identity, web design, and development services. All dynamic content managed through JSON data structures for easy maintenance.",
-      "liveLink": "https://de-studio.vercel.app",
-      "githubLink": "https://github.com/devmilon923/DE-Studio-agency",
-      "featured": true,
-      "gradient": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      "pastelClass": "lilac-mist",
+      "accentColor": "#9552e0"
     },
     {
       "id": "03",
-      "title": "Heirloom App",
-      "type": "Backend",
-      "tags": ["MongoDB", "Node.js", "VectorDB", "OpenAI", "Redis"],
-      "description": "An AI-powered mobile app that creates a personalized digital legacy. Connects users with loved ones through continued conversations based on interaction data.",
-      "liveLink": "https://docs.google.com/document/d/1yBOvfoGFhI0K0byIBn4FOLgDtfhz0f1z8s1K7cEz-0U/edit?tab=t.0#heading=h.yycmiykqlitc",
-      "githubLink": "https://github.com/devmilon923/Heirloom-App-Backend",
+      "title": "DE-Studio Agency",
+      "type": "Frontend / Interactive",
+      "tags": ["Next.js", "Tailwind CSS", "Framer Motion", "App Router"],
+      "description": "A premium, fully responsive agency website showcasing design services and digital product craftsmanship. Utilizes smooth animations, a glassmorphic aesthetic, and JSON-driven dynamic layouts to deliver a high-end agency presentation.",
+      "liveLink": "https://de-studio.vercel.app",
+      "githubLink": "https://github.com/devmilon923/DE-Studio-agency",
       "featured": true,
-      "gradient": "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+      "pastelClass": "sunset-tint",
+      "accentColor": "#f26110"
     },
     {
       "id": "04",
       "title": "Chatcrypt",
-      "type": "Full-Stack",
+      "type": "Full-Stack App",
       "tags": ["Node.js", "MongoDB", "Socket.IO", "JWT"],
-      "description": "A secure, anonymous chat application with ephemeral messages that auto-delete daily. Features real-time messaging, media sharing, and server status monitoring.",
+      "description": "A secure, anonymous chat application with ephemeral messages that automatically delete. Features real-time WebSocket messaging, media sharing, and server health status monitoring, built to ensure privacy and low-latency interaction.",
       "liveLink": "https://chatcrypt.netlify.app/",
       "githubLink": "https://github.com/devmilon923/Chatcrypt",
       "featured": true,
-      "gradient": "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+      "pastelClass": "buttery-tint",
+      "accentColor": "#bb9915"
     }
   ]
 }
